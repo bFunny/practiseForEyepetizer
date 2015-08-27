@@ -1,0 +1,2 @@
+# practiseForEyepetizer
+这个仓库仅是用作自己练习其他App的
