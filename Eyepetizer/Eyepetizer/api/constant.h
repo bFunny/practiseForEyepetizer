@@ -10,6 +10,6 @@
 #define Eyepetizer_constant_h
 
 #define SERVERHOST        @"http://baobab.wandoujia.com"
-#define FEED_URL  [SERVERHOST stringByAppendingString:@"/api/v1/feed?date=20150817"]
+#define FEED_URL  [SERVERHOST stringByAppendingString:@"/api/v1/feed?date=%ld&num=10&vc=67&u=3d9a4480069fec91713723117c0a332d317b874f&v=1.8.0&f=iphone"]
 
 #endif

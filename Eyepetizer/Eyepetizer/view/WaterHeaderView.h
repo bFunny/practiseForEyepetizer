@@ -10,4 +10,6 @@
 
 @interface WaterHeaderView : UICollectionReusableView
 
+@property (nonatomic,copy) NSString *date;
+
 @end

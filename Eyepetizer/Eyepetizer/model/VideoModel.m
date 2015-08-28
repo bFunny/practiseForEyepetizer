@@ -9,8 +9,10 @@
 #import "VideoModel.h"
 
 @implementation VideoModel
+
 + (NSDictionary *)replacedKeyFromPropertyName {
     return @{@"videoId":@"id",
              @"descr":@"description"};
 }
+
 @end

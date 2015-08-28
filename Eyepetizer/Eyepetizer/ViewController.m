@@ -12,7 +12,9 @@
 #import "FeedModel.h"
 #import "DailyModel.h"
 #import "WaterCell.h"
+#import "MJRefresh.h"
 #import "WaterHeaderView.h"
+#import "NSDate+DateTools.h"
 #import "UIFont+eyepetizer.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 
@@ -20,29 +22,53 @@
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *collectionLayout;
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *dataArray;
+@property (nonatomic) NSInteger currentDate;
+@property (nonatomic) NSInteger currentMonth;
 
 @end
 
 @implementation ViewController
 
-- (void) loadData {
+- (void) loadData:(NSString *)urlString {
     
-    [HTTPHelper GETURL:FEED_URL completionHandler:^(NSDictionary *result, NSError *error) {
+    [HTTPHelper GETURL:urlString completionHandler:^(NSDictionary *result, NSError *error) {
         FeedModel *model = [FeedModel objectWithKeyValues:result];
         [self.dataArray addObject:model];
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.dataArray.count > 0) {
-               [self.collectionView reloadData];
-            }
+            [self.collectionView.footer endRefreshing];
+            [self.collectionView reloadData];
         });
     }];
+}
+
+- (void) loadMore {
+    NSDate *date = [NSDate dateWithString:[NSString stringWithFormat:@"%ld",self.currentDate] formatString:@"yyyyMMdd"];
+    if ([date month] < self.currentMonth) {
+        [self.collectionView reloadData];
+        [self.collectionView.footer noticeNoMoreData];
+        return;
+    }
+    self.currentDate -= 1;
+    [self loadData:[NSString stringWithFormat:FEED_URL,self.currentDate]];
+}
+
+- (instancetype) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.title = @"Eyepetizer";
+        self.dataArray = [NSMutableArray array];
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.collectionView];
-    self.dataArray = [NSMutableArray array];
-    [self loadData];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[NSDate date] timeIntervalSince1970]];
+    
+    self.currentMonth = [date month];
+    self.currentDate = [[date formattedDateWithFormat:@"yyyyMMdd"] integerValue];
+    [self loadData:[NSString stringWithFormat:FEED_URL,self.currentDate]];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -50,7 +76,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    self.title = @"Eyepetizer";
+    
 }
 
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -76,11 +102,17 @@
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.0;
+    }
     return 54.f;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     WaterHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:@"WaterHeaderView" forIndexPath:indexPath];
+    FeedModel *model = self.dataArray[indexPath.section];
+    DailyModel *daily = [model.dailyList firstObject];
+    header.date = daily.date;
     return header;
 }
 
@@ -103,6 +135,9 @@
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [_collectionView registerClass:[WaterCell class] forCellWithReuseIdentifier:@"WaterCell"];
         [_collectionView registerClass:[WaterHeaderView class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:@"WaterHeaderView"];
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+        footer.appearencePercentTriggerAutoRefresh = -60;
+        _collectionView.footer = footer;
     }
     return _collectionView;
 }

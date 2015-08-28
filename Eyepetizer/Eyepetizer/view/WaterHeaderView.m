@@ -7,6 +7,7 @@
 //
 
 #import "WaterHeaderView.h"
+#import "NSDate+DateTools.h"
 #import "UIFont+eyepetizer.h"
 
 @implementation WaterHeaderView {
@@ -25,6 +26,19 @@
         [self addSubview:dateLabel];
     }
     return self;
+}
+
+- (void)setDate:(NSString *)date {
+    if (date.length == 0) {
+        return;
+    }
+    dateLabel.text = [self formatterDate:date];
+}
+
+- (NSString *)formatterDate:(NSString *)date {
+    NSDate *currentDate = [NSDate dateWithTimeIntervalSince1970:[date integerValue]/1000.0];
+    NSString *dateString = [currentDate formattedDateWithFormat:@"- MMM. dd -"];
+    return dateString;
 }
 
 @end

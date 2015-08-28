@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "MJExtension.h"
 
 @interface VideoModel : NSObject
@@ -28,8 +29,6 @@
 @property (nonatomic,copy) NSString *webUrl;
 @property (nonatomic,copy) NSString *rawWebUrl;
 @property (nonatomic,copy) NSString *coverForDetail;
-
-
 
 @end
 
