@@ -11,6 +11,7 @@
 
 @interface WaterCell : UICollectionViewCell
 
+@property (nonatomic,strong) UIImageView *imageView;
 @property (nonatomic,strong) VideoModel *model;
 
 @end

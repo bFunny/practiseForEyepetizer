@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
+@property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) NSIndexPath *indexPath;
+@property (nonatomic,assign) CGRect finalCellRect;
 
 @end
 

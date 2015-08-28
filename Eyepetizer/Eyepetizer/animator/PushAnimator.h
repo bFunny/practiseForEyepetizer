@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface PushAnimator : NSObject
+@interface PushAnimator :NSObject<UIViewControllerAnimatedTransitioning>
 
 @end

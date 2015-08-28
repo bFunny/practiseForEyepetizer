@@ -37,7 +37,7 @@
 
 - (NSString *)formatterDate:(NSString *)date {
     NSDate *currentDate = [NSDate dateWithTimeIntervalSince1970:[date integerValue]/1000.0];
-    NSString *dateString = [currentDate formattedDateWithFormat:@"- MMM. dd -"];
+    NSString *dateString = [currentDate formattedDateWithFormat:@"- MMM. dd -" locale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
     return dateString;
 }
 

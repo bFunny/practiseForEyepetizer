@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 yilos. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "constant.h"
 #import "HTTPHelper.h"
 #import "FeedModel.h"
@@ -17,17 +17,18 @@
 #import "NSDate+DateTools.h"
 #import "UIFont+eyepetizer.h"
 #import "CHTCollectionViewWaterfallLayout.h"
+#import "FeedViewController.h"
+#import "PushAnimator.h"
 
-@interface ViewController ()<CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDataSource>
+@interface MainViewController ()<CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDataSource,UINavigationControllerDelegate>
 @property (nonatomic,strong) CHTCollectionViewWaterfallLayout *collectionLayout;
-@property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic) NSInteger currentDate;
 @property (nonatomic) NSInteger currentMonth;
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void) loadData:(NSString *)urlString {
     
@@ -76,7 +77,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    
+    self.navigationController.delegate = self;
 }
 
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -114,6 +115,26 @@
     DailyModel *daily = [model.dailyList firstObject];
     header.date = daily.date;
     return header;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    FeedViewController *vc = [[FeedViewController alloc] init];
+    FeedModel *model = self.dataArray[indexPath.section];
+    DailyModel *daily = [model.dailyList firstObject];
+    VideoModel *video = daily.videoList[indexPath.row];
+    vc.imgUrl = video.coverForFeed;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - transition
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
+    if ([toVC isKindOfClass:[FeedViewController class]]) {
+        PushAnimator *push = [[PushAnimator alloc] init];
+        return push;
+    }else{
+        return nil;
+    }
 }
 
 - (CHTCollectionViewWaterfallLayout *)collectionLayout {

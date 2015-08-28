@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedViewController : UIViewController
-
+@interface FeedViewController : UIViewController<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+@property (strong, nonatomic)UIImageView *imageView;
+@property (copy,nonatomic)NSString *imgUrl;
 @end

@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 yilos. All rights reserved.
 //
 
-#import "BaseAnimator.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface PopAnimator : BaseAnimator
+@interface PopAnimator : NSObject<UIViewControllerAnimatedTransitioning>
 
 @end

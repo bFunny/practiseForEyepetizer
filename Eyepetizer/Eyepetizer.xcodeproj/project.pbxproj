@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13E73A651B8FFDEB00FF4397 /* UIFont+eyepetizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E73A641B8FFDEB00FF4397 /* UIFont+eyepetizer.m */; };
+		13E73A6B1B900A9F00FF4397 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E73A6A1B900A9F00FF4397 /* FeedViewController.m */; };
+		13E73A721B9037D300FF4397 /* PushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E73A711B9037D300FF4397 /* PushAnimator.m */; };
+		13E73A781B90443500FF4397 /* PopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E73A771B90443500FF4397 /* PopAnimator.m */; };
 		13EAB3691B8EAB7200CD6C15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB3681B8EAB7200CD6C15 /* main.m */; };
 		13EAB36C1B8EAB7200CD6C15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB36B1B8EAB7200CD6C15 /* AppDelegate.m */; };
-		13EAB36F1B8EAB7200CD6C15 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB36E1B8EAB7200CD6C15 /* ViewController.m */; };
+		13EAB36F1B8EAB7200CD6C15 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB36E1B8EAB7200CD6C15 /* MainViewController.m */; };
 		13EAB3721B8EAB7200CD6C15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13EAB3701B8EAB7200CD6C15 /* Main.storyboard */; };
 		13EAB3741B8EAB7200CD6C15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13EAB3731B8EAB7200CD6C15 /* Images.xcassets */; };
 		13EAB3771B8EAB7200CD6C15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EAB3751B8EAB7200CD6C15 /* LaunchScreen.xib */; };
@@ -18,7 +22,6 @@
 		13EAB3961B8EAF8800CD6C15 /* FZLTZCHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 13EAB3931B8EAF8800CD6C15 /* FZLTZCHJW--GB1-0.TTF */; };
 		13EAB3971B8EAF8800CD6C15 /* Lobster--1-4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13EAB3941B8EAF8800CD6C15 /* Lobster--1-4.otf */; };
 		13EAB3991B8EAF9200CD6C15 /* mute.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13EAB3981B8EAF9200CD6C15 /* mute.mp3 */; };
-		13EAB39C1B8EB39E00CD6C15 /* UIFont+eyepetizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB39B1B8EB39E00CD6C15 /* UIFont+eyepetizer.m */; };
 		13EAB3A31B8EBCDC00CD6C15 /* WaterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB3A21B8EBCDC00CD6C15 /* WaterCell.m */; };
 		13EAB3A61B8EBD0F00CD6C15 /* WaterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB3A51B8EBD0F00CD6C15 /* WaterHeaderView.m */; };
 		13EAB3AC1B8EC23C00CD6C15 /* HTTPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EAB3AB1B8EC23C00CD6C15 /* HTTPHelper.m */; };
@@ -42,13 +45,21 @@
 
 /* Begin PBXFileReference section */
 		11C4C7921C41B18B2F5EDC7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		13E73A631B8FFDEB00FF4397 /* UIFont+eyepetizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+eyepetizer.h"; sourceTree = "<group>"; };
+		13E73A641B8FFDEB00FF4397 /* UIFont+eyepetizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+eyepetizer.m"; sourceTree = "<group>"; };
+		13E73A691B900A9F00FF4397 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		13E73A6A1B900A9F00FF4397 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		13E73A701B9037D300FF4397 /* PushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushAnimator.h; sourceTree = "<group>"; };
+		13E73A711B9037D300FF4397 /* PushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushAnimator.m; sourceTree = "<group>"; };
+		13E73A761B90443500FF4397 /* PopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAnimator.h; sourceTree = "<group>"; };
+		13E73A771B90443500FF4397 /* PopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAnimator.m; sourceTree = "<group>"; };
 		13EAB3631B8EAB7200CD6C15 /* Eyepetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyepetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13EAB3671B8EAB7200CD6C15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13EAB3681B8EAB7200CD6C15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13EAB36A1B8EAB7200CD6C15 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13EAB36B1B8EAB7200CD6C15 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13EAB36D1B8EAB7200CD6C15 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		13EAB36E1B8EAB7200CD6C15 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		13EAB36D1B8EAB7200CD6C15 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		13EAB36E1B8EAB7200CD6C15 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		13EAB3711B8EAB7200CD6C15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13EAB3731B8EAB7200CD6C15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		13EAB3761B8EAB7200CD6C15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -59,8 +70,6 @@
 		13EAB3931B8EAF8800CD6C15 /* FZLTZCHJW--GB1-0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FZLTZCHJW--GB1-0.TTF"; sourceTree = "<group>"; };
 		13EAB3941B8EAF8800CD6C15 /* Lobster--1-4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster--1-4.otf"; sourceTree = "<group>"; };
 		13EAB3981B8EAF9200CD6C15 /* mute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mute.mp3; sourceTree = "<group>"; };
-		13EAB39A1B8EB39E00CD6C15 /* UIFont+eyepetizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+eyepetizer.h"; sourceTree = "<group>"; };
-		13EAB39B1B8EB39E00CD6C15 /* UIFont+eyepetizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+eyepetizer.m"; sourceTree = "<group>"; };
 		13EAB3A11B8EBCDC00CD6C15 /* WaterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCell.h; sourceTree = "<group>"; };
 		13EAB3A21B8EBCDC00CD6C15 /* WaterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterCell.m; sourceTree = "<group>"; };
 		13EAB3A41B8EBD0F00CD6C15 /* WaterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterHeaderView.h; sourceTree = "<group>"; };
@@ -102,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13E73A6C1B9036EA00FF4397 /* animator */ = {
+			isa = PBXGroup;
+			children = (
+				13E73A701B9037D300FF4397 /* PushAnimator.h */,
+				13E73A711B9037D300FF4397 /* PushAnimator.m */,
+				13E73A761B90443500FF4397 /* PopAnimator.h */,
+				13E73A771B90443500FF4397 /* PopAnimator.m */,
+			);
+			path = animator;
+			sourceTree = "<group>";
+		};
 		13EAB35A1B8EAB7200CD6C15 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +145,7 @@
 		13EAB3651B8EAB7200CD6C15 /* Eyepetizer */ = {
 			isa = PBXGroup;
 			children = (
+				13E73A6C1B9036EA00FF4397 /* animator */,
 				13EAB3A81B8EC1B700CD6C15 /* api */,
 				13EAB38C1B8EAF7400CD6C15 /* category */,
 				13EAB38D1B8EAF7400CD6C15 /* controller */,
@@ -175,6 +196,8 @@
 				13EAB3AE1B8EC24E00CD6C15 /* NSArray+Log.m */,
 				13EAB3AF1B8EC24E00CD6C15 /* NSDictionary+Log.h */,
 				13EAB3B01B8EC24E00CD6C15 /* NSDictionary+Log.m */,
+				13E73A631B8FFDEB00FF4397 /* UIFont+eyepetizer.h */,
+				13E73A641B8FFDEB00FF4397 /* UIFont+eyepetizer.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -182,8 +205,10 @@
 		13EAB38D1B8EAF7400CD6C15 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				13EAB36D1B8EAB7200CD6C15 /* ViewController.h */,
-				13EAB36E1B8EAB7200CD6C15 /* ViewController.m */,
+				13EAB36D1B8EAB7200CD6C15 /* MainViewController.h */,
+				13EAB36E1B8EAB7200CD6C15 /* MainViewController.m */,
+				13E73A691B900A9F00FF4397 /* FeedViewController.h */,
+				13E73A6A1B900A9F00FF4397 /* FeedViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -217,8 +242,6 @@
 			children = (
 				13EAB3AA1B8EC23C00CD6C15 /* HTTPHelper.h */,
 				13EAB3AB1B8EC23C00CD6C15 /* HTTPHelper.m */,
-				13EAB39A1B8EB39E00CD6C15 /* UIFont+eyepetizer.h */,
-				13EAB39B1B8EB39E00CD6C15 /* UIFont+eyepetizer.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -400,15 +423,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				13EAB3B81B8EC4A800CD6C15 /* VideoModel.m in Sources */,
-				13EAB39C1B8EB39E00CD6C15 /* UIFont+eyepetizer.m in Sources */,
 				13EAB3B51B8EC41700CD6C15 /* FeedModel.m in Sources */,
+				13E73A6B1B900A9F00FF4397 /* FeedViewController.m in Sources */,
+				13E73A721B9037D300FF4397 /* PushAnimator.m in Sources */,
 				13EAB3BB1B8EC58B00CD6C15 /* DailyModel.m in Sources */,
 				13EAB3A61B8EBD0F00CD6C15 /* WaterHeaderView.m in Sources */,
 				13EAB3A31B8EBCDC00CD6C15 /* WaterCell.m in Sources */,
-				13EAB36F1B8EAB7200CD6C15 /* ViewController.m in Sources */,
+				13EAB36F1B8EAB7200CD6C15 /* MainViewController.m in Sources */,
 				13EAB3B21B8EC24E00CD6C15 /* NSDictionary+Log.m in Sources */,
 				13EAB36C1B8EAB7200CD6C15 /* AppDelegate.m in Sources */,
+				13E73A651B8FFDEB00FF4397 /* UIFont+eyepetizer.m in Sources */,
 				13EAB3B11B8EC24E00CD6C15 /* NSArray+Log.m in Sources */,
+				13E73A781B90443500FF4397 /* PopAnimator.m in Sources */,
 				13EAB3691B8EAB7200CD6C15 /* main.m in Sources */,
 				13EAB3AC1B8EC23C00CD6C15 /* HTTPHelper.m in Sources */,
 			);
